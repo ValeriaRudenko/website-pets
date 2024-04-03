@@ -1,0 +1,116 @@
+<% layout('layout/main') -%>
+<% block('title', 'Home') -%>
+
+
+<div id="navbar"></div>
+<div class="container">
+    <div class="row col-8">
+    </div>
+    <div class="name" style="margin-bottom: 100px;">
+        Pets
+    </div>
+</div>
+<div id="imageContainer">
+</div>
+
+
+    <script src="./script.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script>
+        $(function () {
+            function loadGallery() {
+                $.ajax({
+                    url: 'http://localhost:3000/gallery',
+                    method: 'GET',
+                    success: function (response) {
+                        var imageContainer = $('#imageContainer');
+                        imageContainer.empty();
+                        var galleryData = Array.isArray(response) ? response : Object.values(response);
+
+                        galleryData.forEach(function (item) {
+                            var imageUrl = item.imageUrl;
+                            var description = item.description;
+
+                            var image = $('<img>').attr('src', imageUrl);
+                            var descParagraph = $('<p>').text(description);
+
+                            var imageDiv = $('<div class="image">');
+                            imageDiv.append(image, descParagraph);
+
+                            var commentForm = $('<form class="comment-form">');
+                            var commentInput = $('<input type="text" name="comment" placeholder="Leave a comment" required>');
+                            var authorInput = $('<input type="text" name="author" placeholder="Your name" required>');
+                            var submitButton = $('<button type="submit">Submit</button>');
+
+                            commentForm.append(commentInput, authorInput, submitButton);
+                            imageDiv.append(commentForm);
+
+                            imageContainer.append(imageDiv);
+                        });
+                    },
+                    error: function (error) {
+                        console.error('Error loading gallery:', error);
+                    }
+                });
+            }
+
+            loadGallery();
+            function displayImage(imageUrl, description) {
+                var imageElement = $("<div class='image'>")
+                    .append($("<img>").attr("src", imageUrl))
+                    .append($("<p>").text(description));
+
+                var commentForm = $("<form class='comment-form'>")
+                    .append($("<input type='text' name='comment' style='margin-right: 10px;' placeholder='Leave a comment' required>"))
+                    .append($("<input type='text' name='author'style='margin-right: 10px;' placeholder='Your name' required>"))
+                    .append($("<button type='submit'>Submit</button>").on("click", function (event) {
+                        event.preventDefault();
+                        submitComment($(this).closest('.image'));
+                    }));
+
+                imageElement.append(commentForm);
+
+                $("#imageContainer").prepend(imageElement);
+            }
+
+            function submitComment(imageElement) {
+                var commentForm = imageElement.find('.comment-form');
+                var formData = new FormData(commentForm[0]);
+
+                $.ajax({
+                    url: "http://localhost:3000/comments",
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response.success) {
+                            var comment = response.comment;
+                            displayComment(imageElement, comment);
+                            clearForm(commentForm);
+                        } else {
+                            console.error("Error submitting comment.");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            }
+
+            function displayComment(imageElement, comment) {
+                var commentElement = $("<div class='comment'>")
+                    .append($("<p>").text(comment.content))
+                    .append($("<span>").text("By: " + comment.author));
+
+                imageElement.append(commentElement);
+            }
+
+            function clearForm(form) {
+                form.find("input[type='text']").val("");
+            }
+        });
+
+    </script>
+

@@ -1,0 +1,90 @@
+<% layout('layout/main') -%>
+<% block('title', 'Settings') -%>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/public/style.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- <button class="add-picture-btn">Add Picture</button>
+<input type="file" id="picture-input" accept="image/*" multiple style="display: none;"> -->
+<script>
+const addPictureBtn = document.querySelector('.add-picture-btn');
+    const pictureInput = document.querySelector('#picture-input');
+    
+    addPictureBtn.addEventListener('click', () => {
+    pictureInput.click();
+    });
+    </script>
+    <div class="row col-8"></div>
+    <div class="text hi">Settings</div>
+    
+    <button class="add-picture-btn">Upload Avatar</button>
+<input type="file" id="picture-input" accept="image/*" multiple style="display: none;">
+
+<form class="form-2 text" action="" method="post">
+        <div class="form-inline">
+            <input class="input-2  mr-sm-2" type="text" id="name" placeholder="Change name">
+            <button class="btn-2 btn btn-primary" onclick="changeName()">Change</button>
+        </div>
+        <div class="form-inline">
+            <input class="input-2 mr-sm-2" type="text" id="breed" placeholder="Change breed">
+            <button class="btn-2 btn btn-primary" onclick="changeBreed()">Change</button>
+        </div>
+        <div class="form-inline">
+            <input class="input-2 mr-sm-2" type="text" id="description" placeholder="Describe yourself">
+            <button class="btn-2 btn btn-primary" onclick="changeDescription()">Change</button>
+        </div>
+        <div class="form-inline">
+            <input class="input-2 mr-sm-2" type="text" id="password" placeholder="Change password">
+            <button class="btn-2 btn btn-primary" onclick="changePassword()">Change</button>
+        </div>
+        <div class="form-inline">
+            <input class="input-2 mr-sm-2" type="text" id="links" placeholder="Add links">
+            <button class="btn-2 btn btn-primary" onclick="addLink()">Save</button>
+        </div>
+    </form>
+
+
+    <!-- <div class="container">
+	<div class="row col-8">
+        <div class="col-md-9">
+        <input class="input-2" type="text" id="name" placeholder="Change name" style="margin-top: 50px;">
+        </div>
+        <div class="col-md-3">
+            <button class="btn-2 btn btn-primary" style="margin-top: 50px;" onclick="changeName()">Change name</button>
+    </div> -->
+        <!-- <div class="col-md-3">
+            <button class="btn-2 btn btn-primary" style="margin-top: 50px;" onclick="changeName()">Change name</button>
+        </div>
+    </div> -->
+
+    <!-- <div class="row">
+        <div class="col-md-9">
+        <input class="input-2  " type="text" id="breed" placeholder="Change breed">
+        </div>
+        <div class="col-md-3">
+        <button class="btn-2 btn btn-primary" onclick="changeBreed()">Change breed</button>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-9">
+        <input class="input-2  " type="text" id="description" placeholder="Describe yourself">
+        </div>
+        <div class="col-md-3">
+        <button class="btn-2 btn btn-primary" onclick="changeDescription()">Change description</button>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-9">
+        <input class="input-2  " type="text" id="password" placeholder="Change password">
+        </div>
+        <div class="col-md-3">
+        <button class="btn-2 btn btn-primary" onclick="changePassword()">Change password</button>
+        </div>
+    </div>
+     -->

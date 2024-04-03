@@ -1,0 +1,16 @@
+<% layout('layout/main') -%>
+<% block('title', 'Sign In') -%>
+    <script src="https://cdn.jsdelivr.net/npm/validator@13.6.0/dist/validator.min.js"></script>
+
+    <script src="./script.js"></script>=
+    <script src="./login.js"></script>
+
+    <div class="row col-8"></div>
+    <div class="text hi">Hi, cutie!</div>
+    <form class="form text" action="/signin" method="post">
+        <input class="input" type="email" name="email" placeholder="Your e-mail" required>
+        <input class="input" type="password" name="password" placeholder="Password" required>
+        <button class="btn" type="submit">Sign In</button>
+        <button class="signasadmin" type="button" type="button" onclick="window.location.href='/signinasadmin'">Sign in as Admin</button>
+    </form>
+    

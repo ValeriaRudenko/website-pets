@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/validator@13.6.0/dist/validator.min.js"></script>
+    <link rel="stylesheet" href="/public/style.css"/>
+    <script src="/public/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/public/login.js"></script>
+</head>
+<body class="background">
+    <div class="row col-8"></div>
+    <div class="text hi">Hi, cutie!</div>
+    <form class="form text" action="/signin" method="post">
+        <input class="input" type="email" name="email" placeholder="Your e-mail" required>
+        <input class="input" type="password" name="password" placeholder="Password" required>
+        <button class="btn" type="submit">Sign In</button>
+        <button class="signasadmin" type="button" type="button" onclick="window.location.href='/public/signinadmin.html'">Sign in as Admin</button>
+    </form>
+    
+</body>
+</html>

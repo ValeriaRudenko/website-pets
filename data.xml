@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<bookstore version="1.0" encoding="UTF-8">
+  <book category="admin">
+    <username>Damian_Senger73</username>
+    <password>YGIjlK6uBaq_WUz</password>
+    <__v>0</__v>
+  </book>
+  <book category="admin">
+    <username>Lonie_Mills25</username>
+    <password>TUvIDv1WdN86DRm</password>
+    <__v>0</__v>
+  </book>
+  <book category="admin">
+    <username>Enrico54</username>
+    <password>95LWQfMhNpHb8ik</password>
+    <__v>0</__v>
+  </book>
+  <book category="admin">
+    <username>Brendan_Beier</username>
+    <password>jD2FhyW2iikne2B</password>
+    <__v>0</__v>
+  </book>
+  <book category="admin">
+    <username>Samanta25</username>
+    <password>kFJ_2RmlfmQNV66</password>
+    <__v>0</__v>
+  </book>
+  <book category="admin">
+    <username>Yoshiko_DuBuque</username>
+    <password>OdXCLVNPlnufTVR</password>
+    <__v>0</__v>
+  </book>
+  <book category="admin">
+    <username>Asia_Wehner</username>
+    <password>ZhYEJ9mN3ml099M</password>
+    <__v>0</__v>
+  </book>
+  <book category="admin">
+    <username>Okey.Schiller76</username>
+    <password>jky4ooy0MlPikwT</password>
+    <__v>0</__v>
+  </book>
+  <book category="admin">
+    <username>Micheal96</username>
+    <password>tkmwlqPH466HGia</password>
+    <__v>0</__v>
+  </book>
+  <book category="admin">
+    <username>Anabel.Corkery</username>
+    <password>YGhcVo8Wvtj083A</password>
+    <__v>0</__v>
+  </book>
+  <book category="users">
+    <userId>9db415b3-23eb-43b4-9dc7-ef14e0672b76</userId>
+    <typeofpet>Account</typeofpet>
+    <name>Sigmund</name>
+    <breed>Gloves</breed>
+    <email>Trey.Kris96@gmail.com</email>
+    <description>Molestiae sunt vitae.</description>
+    <password>fKXLJI40jHTF4vr</password>
+    <gender>copy</gender>
+    <type>Markets</type>
+    <avatar>avatar.png</avatar>
+    <__v>0</__v>
+  </book>
+  <book category="users">
+    <userId>05425988-37f5-4bda-8a72-46bfbb027552</userId>
+    <typeofpet>actuating</typeofpet>
+    <name>Christina</name>
+    <breed>transmit</breed>
+    <email>Soledad_King85@yahoo.com</email>
+    <description>Consequuntur esse id numquam sint aut rem.</description>
+    <password>ZxnyghF_wX7rst4</password>
+    <gender>Cambridgeshire</gender>
+    <type>Forge</type>
+    <avatar>avatar.png</avatar>
+    <__v>0</__v>
+  </book>
+  <book category="users">
+    <userId>bd2956f5-3e88-4ce5-8fb6-edb10c022f5b</userId>
+    <typeofpet>Realigned</typeofpet>
+    <name>Nia</name>
+    <breed>Loan</breed>
+    <email>Ivy_Morissette42@hotmail.com</email>
+    <description>Ut harum aliquam ut dolores dignissimos.</description>
+    <password>as93nZNUJAeiti4</password>
+    <gender>white</gender>
+    <type>Legacy</type>
+    <avatar>avatar.png</avatar>
+    <__v>0</__v>
+  </book>
+  <book category="users">
+    <userId>fc836dcd-7084-41e4-83cf-4a3e30037dc2</userId>
+    <typeofpet>Frozen</typeofpet>
+    <name>Curtis</name>
+    <breed>salmon</breed>
+    <email>Erwin_Stehr52@hotmail.com</email>
+    <description>Sunt omnis ut qui repellat quo.</description>
+    <password>2wRLZgfAK_65oRz</password>
+    <gender>utilisation</gender>
+    <type>Well</type>
+    <avatar>avatar.png</avatar>
+    <__v>0</__v>
+  </book>
+  <book category="users">
+    <userId>b8a429c0-ab19-49c8-add7-2227709cf8f7</userId>
+    <typeofpet>schemas</typeofpet>
+    <name>Irma</name>
+    <breed>content-based</breed>
+    <email>Jedidiah.Becker@gmail.com</email>
+    <description>Repellendus et sed pariatur fuga accusamus itaque dolores quisquam fugiat.</description>
+    <password>YIiDGoobQwgdaIA</password>
+    <gender>Virginia</gender>
+    <type>Practical</type>
+    <avatar>avatar.png</avatar>
+    <__v>0</__v>
+  </book>
+  <book category="users">
+    <userId>76f7f754-cf41-4978-9ed3-fc37918cf9b5</userId>
+    <typeofpet>Architect</typeofpet>
+    <name>Kiley</name>
+    <breed>RSS</breed>
+    <email>Aurelia.Herman@gmail.com</email>
+    <description>Reiciendis aut sit dolores est.</description>
+    <password>MQxrkv8Y2fZjScR</password>
+    <gender>Belarus</gender>
+    <type>Architect</type>
+    <avatar>avatar.png</avatar>
+    <__v>0</__v>
+  </book>
+  <book category="users">
+    <userId>f6d0e492-374f-4240-b4ab-fdb187bf9846</userId>
+    <typeofpet>models</typeofpet>
+    <name>Joy</name>
+    <breed>Assistant</breed>
+    <email>Oda.Runolfsdottir49@yahoo.com</email>
+    <description>Veniam et architecto non aut non labore quod dolore.</description>
+    <password>fBX8CSU3Fztxk9p</password>
+    <gender>Dollar</gender>
+    <type>Borders</type>
+    <avatar>avatar.png</avatar>
+    <__v>0</__v>
+  </book>
+  <book category="users">
+    <userId>21e38e93-0fbd-48ca-8cc1-6eda8760fe96</userId>
+    <typeofpet>Program</typeofpet>
+    <name>Julianne</name>
+    <breed>Metal</breed>
+    <email>Annabell.Rippin24@hotmail.com</email>
+    <description>Ut nostrum esse ipsum quibusdam dolor non aut et et.</description>
+    <password>aLhjmSMMn7w8FOe</password>
+    <gender>Dynamic</gender>
+    <type>ADP</type>
+    <avatar>avatar.png</avatar>
+    <__v>0</__v>
+  </book>
+  <book category="users">
+    <userId>6b9bb75f-89d5-47ab-b75f-50037d927838</userId>
+    <typeofpet>Soft</typeofpet>
+    <name>Kraig</name>
+    <breed>Som</breed>
+    <email>Nyasia12@gmail.com</email>
+    <description>Eveniet omnis sit debitis recusandae ut quo.</description>
+    <password>LX0i5VQaNW7R4N5</password>
+    <gender>withdrawal</gender>
+    <type>indexing</type>
+    <avatar>avatar.png</avatar>
+    <__v>0</__v>
+  </book>
+  <book category="users">
+    <userId>da0309c0-d980-4b85-b307-cd5dec79e787</userId>
+    <typeofpet>mobile</typeofpet>
+    <name>Lula</name>
+    <breed>framework</breed>
+    <email>Rico13@yahoo.com</email>
+    <description>Architecto corporis sequi et labore accusantium similique nemo.</description>
+    <password>bQkmBfLmh_Tk2qM</password>
+    <gender>cutting-edge</gender>
+    <type>sensor</type>
+    <avatar>avatar.png</avatar>
+    <__v>0</__v>
+  </book>
+  <book category="photo">
+    <imageUrl>/uploads/3252ae87-a3df-421b-be48-3c0d8d38f62a-Picture.png</imageUrl>
+    <description>Sit suscipit doloribus impedit possimus quia.</description>
+    <__v>0</__v>
+  </book>
+  <book category="photo">
+    <imageUrl>/uploads/b8fba346-f4e6-4f0a-8a7b-d97a79e90b8d-Picture.png</imageUrl>
+    <description>Aut sunt modi placeat numquam tenetur aut accusamus suscipit.</description>
+    <__v>0</__v>
+  </book>
+  <book category="photo">
+    <imageUrl>/uploads/1575b261-9761-48f8-8899-a0e2d428c80d-Picture.png</imageUrl>
+    <description>Labore voluptates a voluptates.</description>
+    <__v>0</__v>
+  </book>
+  <book category="photo">
+    <imageUrl>/uploads/9d5846d6-8c52-4e36-aa1e-7aaeca979dce-Picture.png</imageUrl>
+    <description>Quos non alias quae vel.</description>
+    <__v>0</__v>
+  </book>
+  <book category="photo">
+    <imageUrl>/uploads/a4293b3b-0c81-4c62-9cd2-a8dfdf12e749-Picture.png</imageUrl>
+    <description>Vel maxime qui autem velit.</description>
+    <__v>0</__v>
+  </book>
+  <book category="photo">
+    <imageUrl>/uploads/5eef4844-5286-4c86-89d0-dca905c46c3e-Picture.png</imageUrl>
+    <description>Et neque nobis neque qui nihil ea architecto qui.</description>
+    <__v>0</__v>
+  </book>
+  <book category="photo">
+    <imageUrl>/uploads/6b980ff6-f24e-4b4c-9d23-95b53aa0841d-Picture.png</imageUrl>
+    <description>Dignissimos voluptas voluptatem cum cupiditate rem at eum explicabo molestias.</description>
+    <__v>0</__v>
+  </book>
+  <book category="photo">
+    <imageUrl>/uploads/caa09ac7-c1e7-4ad7-9e20-47f29a8dada4-Picture.png</imageUrl>
+    <description>Eum recusandae quidem.</description>
+    <__v>0</__v>
+  </book>
+  <book category="photo">
+    <imageUrl>/uploads/c2a545f5-96d2-4405-8f67-18bf0047b897-Picture.png</imageUrl>
+    <description>Qui ea rerum repellat.</description>
+    <__v>0</__v>
+  </book>
+  <book category="photo">
+    <imageUrl>/uploads/94ba78d2-fb78-481b-90f6-1b898e933a76-Picture.png</imageUrl>
+    <description>Architecto dolor sit vel.</description>
+    <__v>0</__v>
+  </book>
+</bookstore>

@@ -1,0 +1,31 @@
+
+  <nav class="navbar fixed-top">
+      <div class="d-flex justify-content-start logo">
+      <img src="./assets/logo.png" alt="logo" height="85">
+      </div>
+      <div class="col-1"></div>
+      <div class="col-10 d-flex justify-content-center">
+      <button id="joinNowButton" class="btn-header btn-outline-light"onclick="window.location.href = '/signup';">Join Now</button>
+      <button id="signInButton" class="btn-header btn-outline-light"onclick="window.location.href = '/signin';">Sign In</button>
+      <button id="newButton" class="btn-header btn-outline-light" onclick="window.location.href = '/newpost';" disabled>New</button>
+      <button class="btn-header btn-outline-light"onclick="window.location.href = '/';">Home</button>
+      <button id="profileButton"class="btn-header btn-outline-light"onclick="window.location.href = '/exports.compile';" disabled>My profile</button>
+      </div>
+      <div class="col-1"></div>
+  </nav>
+
+  <script>
+    $(function() {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+        document.getElementById('newButton').disabled = false;
+        document.getElementById('profileButton').disabled = false;
+        document.getElementById('signInButton').disabled = true;
+        document.getElementById('joinNowButton').disabled = true;
+      } else {
+        document.getElementById('newButton').disabled = true; 
+        document.getElementById('profileButton').disabled = true; 
+        document.getElementById('signInButton').disabled = false;
+        document.getElementById('joinNowButton').disabled = false;
+      }
+    });
+    </script>

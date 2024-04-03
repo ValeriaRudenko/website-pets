@@ -1,0 +1,40 @@
+<script>
+$(function() {
+if (localStorage.getItem('isLoggedIn') === 'true' || (localStorage.getItem('isLoggedInAdmin') === 'true')) {
+    document.getElementById('newButton').disabled = false;
+    document.getElementById('profileButton').disabled = false;
+    document.getElementById('signInButton').disabled = true;
+    document.getElementById('joinNowButton').disabled = true;
+  } else {
+    document.getElementById('newButton').disabled = true; 
+    document.getElementById('profileButton').disabled = true; 
+    document.getElementById('signInButton').disabled = false;
+    document.getElementById('joinNowButton').disabled = false;
+  }
+});
+
+const adminHeading = document.getElementById("admin-heading");
+
+if (localStorage.getItem('isLoggedInAdmin') === 'true') {
+  adminHeading.style.display = "block";
+} else {
+  adminHeading.style.display = "none";
+}
+
+</script>
+<nav class="navbar fixed-top">
+    <div class="d-flex justify-content-start logo">
+    <img src="./assets/logo.png" alt="logo" height="85">
+    </div>
+    <div class="col-1"></div>
+    <div class="col-10 d-flex justify-content-center">
+    <button id="joinNowButton" class="btn-header btn-outline-light"onclick="window.location.href = '/public/join-now.html';">Join Now</button>
+    <button id="signInButton" class="btn-header btn-outline-light"onclick="window.location.href = '/public/signin.html';">Sign In</button>
+    <button id="newButton" class="btn-header btn-outline-light" onclick="window.location.href = '/public/new.html';" disabled>New</button>
+    <button class="btn-header btn-outline-light"onclick="window.location.href = '/public/index.html';">Home</button>
+    <button id="profileButton"class="btn-header btn-outline-light"onclick="window.location.href = '/public/profile.html';" disabled>My profile</button>
+    <h5 id="admin-heading" style="font-size: 15px; display: block;">Admin</h5>
+
+    </div>
+    <div class="col-1"></div>
+</nav>

@@ -1,0 +1,426 @@
+.background {
+  background-color: #f6e6c2;
+}
+.text {
+  font-family: "Lobster", cursive;
+  font-size: 20px;
+  color: #000;
+}
+
+.name {
+  font-family: "Lobster", cursive;
+  font-size: 50px;
+  color: #000;
+  text-align: center;
+  margin-top: 100px;
+}
+h1 {
+  font-family: "Lobster", cursive;
+  text-align: center;
+}
+p {
+  font-family: "Lobster", cursive;
+  text-align: center;
+  font-size: 30px;
+}
+#uploadedImage {
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+button.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  font-family: "Lobster", cursive;
+  background-color: #ea8fea;
+  border: none;
+  border-radius: 20px; /* задаем радиус */
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.form {
+  max-width: 350px;
+  max-height: 500px;
+  padding: 15px;
+  margin-top: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffaacf;
+}
+
+.form-2 {
+  max-width: 500px;
+  max-height: 500px;
+  padding: 15px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffaacf;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+
+  border: 1px solid #ea8fea;
+  background-color: #b9f3e4;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+}
+
+.input-2 {
+  display: block;
+  width: 200px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  border: 1px solid #ea8fea;
+  background-color: #b9f3e4;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+}
+
+button.btn {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  color: #000;
+  background-color: #97bece;
+}
+
+button.signasadmin {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 20px;
+  margin-top: 50px;
+  border: 0;
+  cursor: pointer;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  color: #000;
+  background-color: #97bece;
+}
+button.btn-header {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 20px;
+  margin-left: 10px;
+  border: 0;
+  cursor: pointer;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  color: #000;
+  background-color: #97bece;
+}
+button.btn-header:hover {
+  background-color: #b8e3f4;
+  border-radius: 20px;
+}
+button.btn-header:disabled {
+  background-color: #5757578b;
+  border-radius: 20px;
+  color: #000;
+  cursor: default;
+}
+button.btn-2 {
+  display: block;
+  width: 200px;
+  padding: 8px 10px;
+  border-radius: 20px;
+  margin-left: 20px;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  background-color: #97bece;
+}
+
+button.btn-2:hover {
+  background-color: #b8e3f4;
+  border-radius: 20px;
+  color: #000;
+}
+
+.btn:hover {
+  background-color: #b8e3f4;
+  border-radius: 20px;
+}
+button.btn-submit {
+  display: block;
+  width: 200px;
+  padding: 8px 10px;
+  border-radius: 20px;
+  margin-left: 100px;
+  margin-top: 20px;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  background-color: #97bece;
+}
+button.btn-submit:hover {
+  background-color: #b8e3f4;
+  border-radius: 20px;
+  color: #000;
+}
+#imageInput {
+  display: block;
+  width: 400px;
+  padding: 8px 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  background-color: #97bece;
+}
+#captionInput {
+  display: block;
+  width: 400px;
+  padding: 8px 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+.logo {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  margin-top: 10px;
+}
+.hi {
+  font-family: "Lobster", cursive;
+  font-size: 50px;
+  color: #000;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.add-picture-btn {
+  display: block;
+  width: 100px;
+  height: 100px;
+  padding: 8px 10px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  background-color: #97bece;
+}
+
+.add-picture-btn:hover {
+  background-color: #b8e3f4;
+}
+
+#picture-input {
+  display: none;
+}
+
+.col-image {
+  padding: 10px;
+}
+
+.col-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+#imageContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#imageContainer .image-card {
+  width: 200px;
+  margin: 5px;
+}
+
+#imageContainer .image-card img {
+  width: 100%;
+  height: auto;
+}
+
+#imageContainer .image-card .caption {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.newform {
+  background-color: #f6e6c2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50vh;
+}
+
+.comment{
+  font-size: 20px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+.avatar-input {
+  display: block;
+  width: 150px;
+  height: 150px;
+  padding: 8px 10px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  background-color: #97bece;
+}
+.center-container {
+  /* display: flex; */
+  margin-top: 15px;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.center-button {
+  text-align: center;
+}
+
+.center-button button {
+  margin: 0 auto;
+}
+
+.file-input {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-top: 10px;
+
+  padding: 8px 10px;
+}
+
+.file-input input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.file-input-button {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  background-color: #97bece;
+}
+.avatar-preview {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+}
+#imageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border: 2px solid #ccc;
+  width: 500px;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.image p {
+  text-align: center;
+}
+
+.spacer {
+  width: 20px;
+  height: 20px;
+}
+
+.input-comment {
+  display: block;
+  width: 400px;
+  padding: 8px 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+.delete-button {
+  display: block;
+  width: 200px;
+  padding: 8px 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Lobster", cursive;
+  font-size: 16px;
+  background-color: #ff1c1c;
+}
+.comment{
+  font-size: 14px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}

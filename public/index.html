@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My Index Page</title>
+    <link rel="stylesheet" type="text/css" href="/public/style.css">
+    <script src="/public/script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $("#navbar").load("/public/navbar.html");
+
+            function loadGallery() {
+                $.ajax({
+                    url: 'http://localhost:3000/gallery',
+                    method: 'GET',
+                    success: function (response) {
+                        var imageContainer = $('#imageContainer');
+                        imageContainer.empty();
+                        var galleryData = Array.isArray(response) ? response : Object.values(response);
+
+                        galleryData.forEach(function (item) {
+                            var imageUrl = item.imageUrl;
+                            var description = item.description;
+                            var _id = item._id;
+
+
+                            var divId = document.createElement("div");
+                            divId.id = _id;
+
+
+                            var divId = document.createElement("div");
+                            divId.id = _id;
+                            var image = $('<img>').attr('src', imageUrl);
+                            var descParagraph = $('<p>').text(description);
+
+                            var imageDiv = $('<div class="image">');
+
+                            imageDiv.append(image, descParagraph, divId);
+                            // imageDiv.append('<div id="">'+$id+'</div>');
+
+
+                            imageDiv.append(image, descParagraph,divId);
+                            // imageDiv.append('<div id="">'+$id+'</div>');
+                            if (localStorage.getItem('isLoggedInAdmin') === 'true') {
+                                var deleteButton = $('<button type="submit-delete" class="delete-button"> Delete post </button>');
+                            } 
+                            else if (localStorage.getItem('isLoggedInAdmin') === 'false') {
+                                var deleteButton = $('<button type="submit-delete" class="delete-button" style="display: none;"> Delete post </button>');
+                            }
+                            deleteButton.appendTo(imageDiv);
+                            var commentForm = $('<form class="comment-form">');
+
+                            var commentInput = $('<input type="text" name="comment" placeholder="Leave a comment" required>');
+                            var authorInput = $('<input type="text" name="author" placeholder="Your name" required>');
+                            var submitButton = $('<button type="submit">Submit</button>');
+                            var photo_id = $("<input type='text' name='photo_id' required>");
+                            photo_id.hide();
+                            photo_id.val(_id);
+                            commentForm.submit(function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Retrieve the form data
+    var formData = {
+        author: authorInput.val(),
+        photo_id: photo_id.val(),
+        content: commentInput.val()
+    };
+
+    // Send a POST request to the server
+    $.ajax({
+        type: 'POST',
+        url: '/comments',
+        data: formData,
+        success: function (response) {
+            console.log('Comment saved:', response.comment);
+            // Optionally, you can perform any additional actions here, such as displaying a success message
+            
+            // Reload the page
+            location.reload();
+        },
+        error: function (error) {
+            console.error('Error saving comment:', error);
+            // Optionally, you can display an error message to the user
+        }
+    });
+});
+
+
+
+                            commentForm.append(photo_id,commentInput, authorInput, submitButton);
+
+                            imageDiv.append(commentForm);
+
+
+                            imageContainer.append(imageDiv);
+
+                            // Add comment container after image container
+
+                        });
+                    },
+                    error: function (error) {
+                        console.error('Error loading gallery:', error);
+                    }
+                });
+            }
+
+            loadGallery();
+            getComments();
+            function displayImage(imageUrl, description, imageId) {
+                var imageElement = $("<div class='image'>").attr('data-id', imageId)
+
+                    .append($("<img>").attr("src", imageUrl))
+                    .append($("<p>").text(description));
+
+                var deleteButton = $("<button type='submit-delete' class='delete-button'>Delete p</button>").on("click", function (event) {
+                    event.preventDefault();
+                    var imageId = getImageId($(this).closest('.image'));
+                    var imageElement = $(this).closest('.image');
+                    deleteImage(imageId, imageElement);
+                });
+
+                var commentForm = $("<form class='comment-form'>")
+
+                    .append($("<input type='text' name='photo_id' style='margin-right: 10px;' placeholder='Leave a comment' required> "))
+                    .append($("<input type='text' name='comment' style='margin-right: 10px;' placeholder='Leave a comment' required>"))
+                    .append($("<input type='text' name='author'style='margin-right: 10px;' placeholder='Your name' required>"))
+
+
+                    .append($("<button type='submit'>Submit</button>").on("click", function (event) {
+                        event.preventDefault();
+                        submitComment($(this).closest('.image'));
+                    }));
+
+                imageElement.append(commentForm).append(deleteButton);
+
+                $("#imageContainer").prepend(imageElement);
+            }
+            function deleteImage(_id) {
+                $.ajax({
+                    url: "http://localhost:3000/gallery/" + _id,
+                    type: "DELETE",
+                    success: function (response) {
+                        if (response.success) {
+                            alert("Image deleted successfully");
+                        } else {
+                            console.error("Error deleting image.");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    },
+                });
+            }
+
+            $(document).on("click", ".delete-button", function (event) {
+                event.preventDefault();
+                var imageElement = $(this).closest('.image');
+                var imageId = imageElement.attr('data-id'); // Retrieve the `_id` from the attribute
+                deleteImage(imageId);
+            });
+
+
+            $(document).on("click", ".delete-button", function (event) {
+                event.preventDefault();
+                var imageElement = $(this).closest('.image');
+                var imageId = imageElement.data('id');
+                deleteImage(imageId);
+            });
+
+
+
+            function submitComment(imageElement) {
+                var commentForm = imageElement.find('.comment-form');
+                var formData = new FormData(commentForm[0]);
+
+                $.ajax({
+                    url: "http://localhost:3000/comments",
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response.success) {
+                            var comment = response.comment;
+                            displayComment(imageElement, comment);
+                            clearForm(commentForm);
+                        } else {
+                            console.error("Error submitting comment.");
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            }
+
+            function displayComment(imageElement, comment) {
+                var commentElement = $("<div class='comment'>")
+                    .append($("<p>").text(comment.content))
+                    .append($("<span>").text("By: " + comment.author));
+
+                imageElement.append(commentElement);
+            }
+            function getComments() {
+                $.ajax({
+                    url: 'http://localhost:3000/comments',
+                    method: 'GET',
+                    success: function (response) {
+                        
+                        var commentData = Array.isArray(response.comments) ? response.comments : Object.values(response.comments);
+
+                        commentData.forEach(function (item) {
+                            
+                            
+                            var content = item.content;
+                            var author = item.author;
+                            var photo_id = item.photo_id;
+                            var commentContainer = $('#'+photo_id);
+                            
+                            var comment = $('<p class="comment">').text(content);
+                            var authorParagraph = $('<p class="comment">').text(author);
+                            var id = $('<p>').text(photo_id);
+
+                            var commentDiv = $('<div class="comment">');
+                            commentDiv.append( comment, authorParagraph);
+
+                            commentContainer.append(commentDiv);
+                        });
+                    },
+                    error: function (error) {
+                        var commentContainer = $('#commentContainer');
+                        var comment = $('<p>').text('Error loading comments');
+                        console.error('Error loading comments:', error);
+                        commentContainer.append(comment);
+                    }
+                });
+            }
+
+            function getComments() {
+                $.ajax({
+                    url: 'http://localhost:3000/comments',
+                    method: 'GET',
+                    success: function (response) {
+
+                        var commentData = Array.isArray(response.comments) ? response.comments : Object.values(response.comments);
+
+                        commentData.forEach(function (item) {
+
+
+                            var content = item.content;
+                            var author = item.author;
+                            var photo_id = item.photo_id;
+                            var commentContainer = $('#' + photo_id);
+
+                            var comment = $('<p class="comment">').text(content);
+                            var authorParagraph = $('<p class="comment">').text(author);
+                            var id = $('<p>').text(photo_id);
+
+                            var commentDiv = $('<div class="comment">');
+                            commentDiv.append(comment, authorParagraph);
+
+                            commentContainer.append(commentDiv);
+                        });
+                    },
+                    error: function (error) {
+                        var commentContainer = $('#commentContainer');
+                        var comment = $('<p>').text('Error loading comments');
+                        console.error('Error loading comments:', error);
+                        commentContainer.append(comment);
+                    }
+                });
+            }
+
+            function clearForm(form) {
+                form.find("input[type='text']").val("");
+            }
+
+
+            $(document).on("click", "button[type='submit-delete']", function (event) {
+                event.preventDefault();
+                var imageId = $(this).closest('.image').attr('data-id');
+                var imageElement = $(this).closest('.image');
+                deleteImage(imageId, imageElement);
+            });
+
+        });
+    </script>
+</head>
+
+<body class="background">
+    <div id="navbar"></div>
+    <div class="container">
+        <div class="row col-8">
+        </div>
+        <div class="name" style="margin-bottom: 100px;">
+            Pets
+        </div>
+    </div>
+    <div id="imageContainer"></div>
+</body>
+
+</html>

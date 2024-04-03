@@ -1,0 +1,15 @@
+<% layout('layout/main') -%>
+<% block('title', 'Sign In as admin') -%>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/validator@13.6.0/dist/validator.min.js"></script>
+    <script src="./signinadmin.js"></script>
+
+    <div class="row col-8"></div>
+    <div class="text hi">Hi, Admin!</div>
+    <form class="form text" id="admin-login-form">
+        <input class="input" name="email" placeholder="Username" required>
+        <input class="input" type="password" name="password" placeholder="Password" required>
+        <button class="btn" type="submit">Sign In</button>
+        <button class="signasadmin" type="button" onclick="window.location.href='/signin'">Sign in as User</button>
+    </form>
+
